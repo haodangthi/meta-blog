@@ -1,0 +1,57 @@
+{
+  "id": "article",
+  "type": "SharedSlice",
+  "name": "Article",
+  "description": "Article",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "article_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "article title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "paragraph": {
+          "type": "StructuredText",
+          "config": {
+            "label": "paragraph",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "withoutTitle",
+      "name": "Without title",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "paragraph": {
+          "type": "StructuredText",
+          "config": {
+            "label": "paragraph",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
