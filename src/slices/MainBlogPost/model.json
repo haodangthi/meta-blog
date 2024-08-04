@@ -1,0 +1,26 @@
+{
+  "id": "main_blog_post",
+  "type": "SharedSlice",
+  "name": "MainBlogPost",
+  "description": "MainBlogPost",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "post": {
+          "type": "Link",
+          "config": {
+            "label": "post",
+            "select": "document"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

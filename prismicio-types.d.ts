@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type BlogPostPageDocumentDataSlicesSlice = ArticleSlice;
+type BlogPostPageDocumentDataSlicesSlice =
+  | BlogImageSlice
+  | BlopPostPageInfoSlice
+  | ArticleSlice;
 
 /**
  * Content for blog post page documents
@@ -417,137 +420,48 @@ export type ArticleSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *BlogPosts → Blog post → Primary → Blog Post*
+ * Primary content in *BlogImage → Default → Primary*
  */
-export interface BlogPostsSliceBlogPostPrimaryBlogPostItem {
+export interface BlogImageSliceDefaultPrimary {
   /**
-   * category field in *BlogPosts → Blog post → Primary → Blog Post*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: Technology
-   * - **API ID Path**: blog_posts.blogPost.primary.blog_post[].category
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  category: prismic.SelectField<"Technology" | "Travel", "filled">;
-
-  /**
-   * title field in *BlogPosts → Blog post → Primary → Blog Post*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_posts.blogPost.primary.blog_post[].title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * date field in *BlogPosts → Blog post → Primary → Blog Post*
-   *
-   * - **Field Type**: Date
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_posts.blogPost.primary.blog_post[].date
-   * - **Documentation**: https://prismic.io/docs/field#date
-   */
-  date: prismic.DateField;
-
-  /**
-   * author field in *BlogPosts → Blog post → Primary → Blog Post*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_posts.blogPost.primary.blog_post[].author
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  author: prismic.KeyTextField;
-
-  /**
-   * profile img field in *BlogPosts → Blog post → Primary → Blog Post*
+   * image field in *BlogImage → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_posts.blogPost.primary.blog_post[].profile_img
+   * - **API ID Path**: blog_image.default.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  profile_img: prismic.ImageField<never>;
-
-  /**
-   * post img field in *BlogPosts → Blog post → Primary → Blog Post*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_posts.blogPost.primary.blog_post[].post_img
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  post_img: prismic.ImageField<never>;
-
-  /**
-   * category color field in *BlogPosts → Blog post → Primary → Blog Post*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_posts.blogPost.primary.blog_post[].category_color
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  category_color: prismic.ColorField;
-
-  /**
-   * is main field in *BlogPosts → Blog post → Primary → Blog Post*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: blog_posts.blogPost.primary.blog_post[].is_main
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  is_main: prismic.BooleanField;
+  image: prismic.ImageField<never>;
 }
 
 /**
- * Primary content in *BlogPosts → Blog post → Primary*
- */
-export interface BlogPostsSliceBlogPostPrimary {
-  /**
-   * Blog Post field in *BlogPosts → Blog post → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_posts.blogPost.primary.blog_post[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  blog_post: prismic.GroupField<
-    Simplify<BlogPostsSliceBlogPostPrimaryBlogPostItem>
-  >;
-}
-
-/**
- * Blog post variation for BlogPosts Slice
+ * Default variation for BlogImage Slice
  *
- * - **API ID**: `blogPost`
+ * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type BlogPostsSliceBlogPost = prismic.SharedSliceVariation<
-  "blogPost",
-  Simplify<BlogPostsSliceBlogPostPrimary>,
+export type BlogImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogImageSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *BlogPosts*
+ * Slice variation for *BlogImage*
  */
-type BlogPostsSliceVariation = BlogPostsSliceBlogPost;
+type BlogImageSliceVariation = BlogImageSliceDefault;
 
 /**
- * BlogPosts Shared Slice
+ * BlogImage Shared Slice
  *
- * - **API ID**: `blog_posts`
- * - **Description**: BlogPosts
+ * - **API ID**: `blog_image`
+ * - **Description**: BlogImage
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type BlogPostsSlice = prismic.SharedSlice<
-  "blog_posts",
-  BlogPostsSliceVariation
+export type BlogImageSlice = prismic.SharedSlice<
+  "blog_image",
+  BlogImageSliceVariation
 >;
 
 /**
@@ -610,6 +524,51 @@ type BlogPostsListSliceVariation = BlogPostsListSliceDefault;
 export type BlogPostsListSlice = prismic.SharedSlice<
   "blog_posts_list",
   BlogPostsListSliceVariation
+>;
+
+/**
+ * Primary content in *BlopPostPageInfo → Default → Primary*
+ */
+export interface BlopPostPageInfoSliceDefaultPrimary {
+  /**
+   * blog Post Page Info field in *BlopPostPageInfo → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blop_post_page_info.default.primary.blog_post_page_info
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  blog_post_page_info: prismic.ContentRelationshipField;
+}
+
+/**
+ * Default variation for BlopPostPageInfo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlopPostPageInfoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlopPostPageInfoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BlopPostPageInfo*
+ */
+type BlopPostPageInfoSliceVariation = BlopPostPageInfoSliceDefault;
+
+/**
+ * BlopPostPageInfo Shared Slice
+ *
+ * - **API ID**: `blop_post_page_info`
+ * - **Description**: BlopPostPageInfo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlopPostPageInfoSlice = prismic.SharedSlice<
+  "blop_post_page_info",
+  BlopPostPageInfoSliceVariation
 >;
 
 /**
@@ -731,16 +690,19 @@ declare module "@prismicio/client" {
       ArticleSliceVariation,
       ArticleSliceDefault,
       ArticleSliceWithoutTitle,
-      BlogPostsSlice,
-      BlogPostsSliceBlogPostPrimaryBlogPostItem,
-      BlogPostsSliceBlogPostPrimary,
-      BlogPostsSliceVariation,
-      BlogPostsSliceBlogPost,
+      BlogImageSlice,
+      BlogImageSliceDefaultPrimary,
+      BlogImageSliceVariation,
+      BlogImageSliceDefault,
       BlogPostsListSlice,
       BlogPostsListSliceDefaultPrimaryPostsItem,
       BlogPostsListSliceDefaultPrimary,
       BlogPostsListSliceVariation,
       BlogPostsListSliceDefault,
+      BlopPostPageInfoSlice,
+      BlopPostPageInfoSliceDefaultPrimary,
+      BlopPostPageInfoSliceVariation,
+      BlopPostPageInfoSliceDefault,
       MainBlogPostSlice,
       MainBlogPostSliceDefaultPrimary,
       MainBlogPostSliceVariation,

@@ -1,7 +1,8 @@
 'use client'
+
 import styled from "styled-components";
-import {useState} from "react";
 import ThemeIcon from "./Icons/ThemeIcon";
+import {useTheme} from "../context/ThemeContext";
 
 const SwitcherContainer = styled.div`
     margin-left: 40px;
@@ -34,12 +35,8 @@ const SwitchCircle = styled.div`
 `;
 
 const ThemeSwitcher = () => {
-    const [theme, setTheme] = useState("light");
+    const { theme , toggleTheme } = useTheme();
 
-    const toggleTheme = () => {
-        const newTheme = theme === "light" ? "dark" : "light";
-        setTheme(newTheme);
-    };
 
     return (
         <SwitcherContainer theme={theme} onClick={toggleTheme}>

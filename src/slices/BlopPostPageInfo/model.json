@@ -1,0 +1,26 @@
+{
+  "id": "blop_post_page_info",
+  "type": "SharedSlice",
+  "name": "BlopPostPageInfo",
+  "description": "BlopPostPageInfo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "blog_post_page_info": {
+          "type": "Link",
+          "config": {
+            "label": "blog Post Page Info",
+            "select": "document"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

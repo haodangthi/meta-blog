@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "blog_image": {
+              "type": "SharedSlice"
+            },
+            "blop_post_page_info": {
+              "type": "SharedSlice"
+            },
             "article": {
               "type": "SharedSlice"
             }

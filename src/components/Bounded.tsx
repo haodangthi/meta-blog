@@ -9,22 +9,25 @@ type BoundedProps = {
 };
 
 const Wrapper = styled.div`
-max-width: fit-content;
-margin: 0 auto;
+    max-width: fit-content;
+    margin: 0 auto;
+    margin-bottom: ${props => props.marginbottom || 0}px;
 `
 
 export default function Bounded({
-                                    as: Comp = "section",
-                                    className,
-                                    children,
-                                    ...restProps
-                                }: BoundedProps) {
+    as: Comp = "section",
+    className,
+    children,
+    marginBottom,
+    ...restProps
+    }: BoundedProps) {
+
     return (
         <Comp
             className={className}
             {...restProps}
         >
-            <Wrapper>{children}</Wrapper>
+            <Wrapper marginbottom = {marginBottom}>{children}</Wrapper>
         </Comp>
     );
 }
