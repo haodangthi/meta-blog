@@ -1,13 +1,13 @@
 // components/Footer.tsx
 'use client'
-import React from 'react';
-import styled from 'styled-components';
-import ThemeIcon from "./Icons/ThemeIcon";
-import Bounded from "./Bounded";
+import React from 'react'
+import styled from 'styled-components'
+import ThemeIcon from './Icons/ThemeIcon'
+import Bounded from './Bounded'
 
 const FooterContainer = styled.footer`
   padding: 64px 0 0;
-`;
+`
 
 const FooterContent = styled.div`
   max-width: 1200px;
@@ -15,22 +15,22 @@ const FooterContent = styled.div`
   justify-content: space-around;
   align-items: flex-start;
   text-align: left;
-`;
+`
 
 const Column = styled.div`
   flex: 1;
-`;
+`
 
 const ColumnTitle = styled.h3`
   margin-bottom: 20px;
   font-size: 1.2rem;
   color: #333;
-`;
+`
 
 const LinkList = styled.ul`
   list-style: none;
   padding: 0;
-`;
+`
 
 const LinkItem = styled.li`
   margin-bottom: 10px;
@@ -40,17 +40,17 @@ const LinkItem = styled.li`
   &:hover {
     color: #000;
   }
-`;
+`
 
 const AboutText = styled.p`
   color: #666;
   margin: 10px 0;
-`;
+`
 
 const Address = styled.address`
   font-style: normal;
   color: #666;
-`;
+`
 
 const ContactItem = styled.p`
   display: flex;
@@ -60,18 +60,18 @@ const ContactItem = styled.p`
   svg {
     margin-right: 8px;
   }
-`;
+`
 
 const NewsletterSection = styled.div`
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-`;
+`
 
 const NewsletterTitle = styled.h4`
   margin-bottom: 15px;
-`;
+`
 
 const InputWrapper = styled.div`
   display: flex;
@@ -81,7 +81,7 @@ const InputWrapper = styled.div`
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 10px;
-`;
+`
 
 const Input = styled.input`
   width: 100%;
@@ -89,7 +89,7 @@ const Input = styled.input`
   border: none;
   background: none;
   outline: none;
-`;
+`
 
 const Button = styled.button`
   width: 100%;
@@ -103,8 +103,7 @@ const Button = styled.button`
   &:hover {
     background-color: #2a68cc;
   }
-`;
-
+`
 
 const CopyrightSection = styled.div`
   padding: 20px 0;
@@ -114,7 +113,7 @@ const CopyrightSection = styled.div`
   font-size: 0.9rem;
 
   a {
-    color: #3B3C4A;
+    color: #3b3c4a;
     margin: 0 10px;
     text-decoration: none;
 
@@ -123,99 +122,104 @@ const CopyrightSection = styled.div`
     }
 
     &:not(:last-child) {
-      border-right: 1px solid #E8E8EA;
+      border-right: 1px solid #e8e8ea;
       padding-right: 10px;
     }
   }
-`;
+`
 
 const Logo = styled.div`
   display: flex;
   align-items: center;
-`;
-
+`
 
 const LogoText = styled.span`
   margin-left: 8px;
   font-size: 1rem;
   font-weight: bold;
-`;
-
-
+`
 
 const Footer: React.FC = () => {
-    const quickLinks = ['Home', 'About', 'Blog', 'Archived', 'Author', 'Contact'];
-    const categories = ['Lifestyle', 'Technology', 'Travel', 'Business', 'Economy', 'Sports'];
-    const footerLinks = [
-        { name: 'Terms of Use', url: '#' },
-        { name: 'Privacy Policy', url: '#' },
-        { name: 'Cookie Policy', url: '#' }
-    ];
-    const email ='belowinfo@jstemplate.net';
-    const phone = '880 123 456 789';
+  const quickLinks = ['Home', 'About', 'Blog', 'Archived', 'Author', 'Contact']
+  const categories = [
+    'Lifestyle',
+    'Technology',
+    'Travel',
+    'Business',
+    'Economy',
+    'Sports',
+  ]
+  const footerLinks = [
+    { name: 'Terms of Use', url: '#' },
+    { name: 'Privacy Policy', url: '#' },
+    { name: 'Cookie Policy', url: '#' },
+  ]
+  const email = 'belowinfo@jstemplate.net'
+  const phone = '880 123 456 789'
 
+  return (
+    <FooterContainer>
+      <Bounded>
+        <FooterContent>
+          <Column>
+            <ColumnTitle>About</ColumnTitle>
+            <AboutText>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </AboutText>
+            <Address>
+              <ContactItem>{email}</ContactItem>
+              <ContactItem>{phone}</ContactItem>
+            </Address>
+          </Column>
+          <Column>
+            <ColumnTitle>Quick Link</ColumnTitle>
+            <nav>
+              <LinkList>
+                {quickLinks.map((link, index) => (
+                  <LinkItem key={index}>{link}</LinkItem>
+                ))}
+              </LinkList>
+            </nav>
+          </Column>
+          <Column>
+            <ColumnTitle>Category</ColumnTitle>
+            <nav>
+              <LinkList>
+                {categories.map((category, index) => (
+                  <LinkItem key={index}>{category}</LinkItem>
+                ))}
+              </LinkList>
+            </nav>
+          </Column>
+          <Column>
+            <NewsletterSection>
+              <NewsletterTitle>Weekly Newsletter</NewsletterTitle>
+              <p>Get blog articles and offers via email.</p>
+              <InputWrapper>
+                <Input type="email" placeholder="Your Email" />
+                <ThemeIcon />
+              </InputWrapper>
+              <Button>Subscribe</Button>
+            </NewsletterSection>
+          </Column>
+        </FooterContent>
+        <CopyrightSection>
+          <Logo>
+            <LogoText>MetaBlog 2023. All Rights Reserved.</LogoText>
+          </Logo>
+          <div>
+            {footerLinks.map((link, index) => (
+              <a key={index} href={link.url}>
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </CopyrightSection>
+      </Bounded>
+    </FooterContainer>
+  )
+}
 
-    return (
-        <FooterContainer>
-            <Bounded>
-                 <FooterContent>
-                    <Column>
-                        <ColumnTitle>About</ColumnTitle>
-                        <AboutText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</AboutText>
-                        <Address>
-                            <ContactItem>
-                                {email}
-                            </ContactItem>
-                            <ContactItem>
-                                {phone}
-                            </ContactItem>
-                        </Address>
-                    </Column>
-                    <Column>
-                        <ColumnTitle>Quick Link</ColumnTitle>
-                        <nav>
-                            <LinkList>
-                                {quickLinks.map((link, index) => (
-                                    <LinkItem key={index}>{link}</LinkItem>
-                                ))}
-                            </LinkList>
-                        </nav>
-                    </Column>
-                    <Column>
-                        <ColumnTitle>Category</ColumnTitle>
-                        <nav>
-                            <LinkList>
-                                {categories.map((category, index) => (
-                                    <LinkItem key={index}>{category}</LinkItem>
-                                ))}
-                            </LinkList>
-                        </nav>
-                    </Column>
-                    <Column>
-                        <NewsletterSection>
-                            <NewsletterTitle>Weekly Newsletter</NewsletterTitle>
-                            <p>Get blog articles and offers via email.</p>
-                            <InputWrapper>
-                                <Input type="email" placeholder="Your Email" />
-                                <ThemeIcon/>
-                            </InputWrapper>
-                            <Button>Subscribe</Button>
-                        </NewsletterSection>
-                    </Column>
-                </FooterContent>
-                <CopyrightSection>
-                    <Logo>
-                        <LogoText>MetaBlog 2023. All Rights Reserved.</LogoText>
-                    </Logo>
-                    <div>
-                        {footerLinks.map((link, index) => (
-                            <a key={index} href={link.url}>{link.name}</a>
-                        ))}
-                    </div>
-                </CopyrightSection>
-            </Bounded>
-        </FooterContainer>
-    );
-};
-
-export default Footer;
+export default Footer

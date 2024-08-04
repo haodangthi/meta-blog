@@ -1,6 +1,6 @@
 'use client'
 
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -12,6 +12,6 @@ const GlobalStyle = createGlobalStyle`
   footer {
       background-color: ${(props) => props.theme.backgroundFooter};
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

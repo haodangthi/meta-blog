@@ -1,12 +1,12 @@
-import { Content } from "@prismicio/client";
-import {PrismicRichText, SliceComponentProps} from "@prismicio/react";
-import Bounded from "../../components/Bounded";
-import {Wrapper} from "./components/Wrapper";
+import { Content } from '@prismicio/client'
+import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
+import Bounded from '../../components/Bounded'
+import { Wrapper } from './components/Wrapper'
 
 /**
  * Props for `Article`.
  */
-export type ArticleProps = SliceComponentProps<Content.ArticleSlice>;
+export type ArticleProps = SliceComponentProps<Content.ArticleSlice>
 
 /**
  * Component for "Article" Slices.
@@ -23,7 +23,7 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
         <PrismicRichText field={slice.primary.paragraph} />
       </Wrapper>
     </Bounded>
-  );
-};
+  )
+}
 
-export default Article;
+export default Article

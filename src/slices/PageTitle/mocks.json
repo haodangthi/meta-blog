@@ -1,14 +1,14 @@
 [
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"page_title": {
-				"__TYPE__": "FieldContent",
-				"value": "grabbed",
-				"type": "Text"
-			}
-		},
-		"items": []
-	}
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "page_title": {
+        "__TYPE__": "FieldContent",
+        "value": "grabbed",
+        "type": "Text"
+      }
+    },
+    "items": []
+  }
 ]

@@ -1,9 +1,13 @@
 'use client'
-import SearchIcon from "./Icons/SearchIcon";
-import {Inter} from "next/font/google";
-import styled from "styled-components";
+import SearchIcon from './Icons/SearchIcon'
+import { Inter } from 'next/font/google'
+import styled from 'styled-components'
 
-const inter = Inter({ subsets: ["latin"], display: 'swap', adjustFontFallback: false });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: false,
+})
 
 const StyledSearchInput = styled.div`
   position: relative;
@@ -18,11 +22,11 @@ const StyledSearchInput = styled.div`
     border-radius: 5px;
     font-size: 14px;
     font-weight: 400;
-    background-color: #F4F4F5;
+    background-color: #f4f4f5;
     outline: none;
-    
+
     &::placeholder {
-      font-family: ${inter.style.fontFamily}; 
+      font-family: ${inter.style.fontFamily};
     }
   }
 
@@ -33,15 +37,15 @@ const StyledSearchInput = styled.div`
     transform: translateY(-50%);
     pointer-events: none;
   }
-`;
+`
 
 const SearchBar = (props) => {
-    return (
-        <StyledSearchInput className={ inter.className }>
-            <input type="text" placeholder='Search' {...props} />
-            <SearchIcon/>
-        </StyledSearchInput>
-    );
-};
+  return (
+    <StyledSearchInput className={inter.className}>
+      <input type="text" placeholder="Search" {...props} />
+      <SearchIcon />
+    </StyledSearchInput>
+  )
+}
 
-export default SearchBar;
+export default SearchBar
