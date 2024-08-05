@@ -33,21 +33,6 @@ a {
   margin-bottom: 16px;
 }
 
-.blog-posts {
-  max-width: 1222px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 0 0 32px;
-}
-
-.blog-post {
-  width: fit-content;
-  padding: 16px;
-  border-radius: 12px;
-  border: 1px solid #e8e8ea;
-}
-
 .profile-img {
   width: 36px;
   height: 36px;

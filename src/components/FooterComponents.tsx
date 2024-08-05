@@ -73,6 +73,7 @@ export const NewsletterSection = styled.div`
 `
 
 export const NewsletterTitle = styled.h4`
+  color: ${(props) => props.theme.color};
   margin: 30px 0 15px;
 `
 

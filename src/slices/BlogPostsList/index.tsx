@@ -1,9 +1,9 @@
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
-import BlogPost from '../../components/BlogPost'
 import Bounded from '../../components/Bounded'
 import { createClient } from '../../prismicio'
 import { Button } from '../../components/ui/Button'
+import BlogPosts from '../../components/BlogPostsList'
 
 /**
  * Props for `BlogPostsList`.
@@ -26,11 +26,7 @@ const BlogPostsList = async ({
       data-slice-variation={slice.variation}
       marginBottom={80}
     >
-      <div className="blog-posts">
-        {posts.map((post) => {
-          return <BlogPost data={post.data} key={post.uid}></BlogPost>
-        })}
-      </div>
+      <BlogPosts data={posts} />
       <div className="justify-center">
         <Button>Load More</Button>
       </div>

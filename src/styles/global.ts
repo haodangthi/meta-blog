@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
       background-color: ${(props) => props.theme.backgroundFooter};
       color: ${(props) => props.theme.color};
       
-      h3, p {
+      h4, p {
         color: #696A75;
       }
   }
