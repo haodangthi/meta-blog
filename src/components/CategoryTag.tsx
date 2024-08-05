@@ -1,6 +1,8 @@
 'use client'
 
 import styled from 'styled-components'
+import { ICategory } from '../types/BlogPost'
+import { IBlogPostPayload } from '../types/BlogPostPayload'
 
 const Tag = styled.div`
   width: fit-content;
@@ -10,10 +12,24 @@ const Tag = styled.div`
   background-color: rgba(75, 107, 251, 0.05);
 `
 
-export const CategoryTag = ({ item }) => {
+interface ICategoryTagProps {
+  item: ICategory
+}
+
+export function CategoryTag({ item }: ICategoryTagProps) {
   return (
     <Tag className="mb-16" color={item.text_color}>
       {item.name}
     </Tag>
+  )
+}
+
+export function Tags({ data }: IBlogPostPayload) {
+  return (
+    <>
+      {data.category.map((item, index) => (
+        <CategoryTag key={index} item={item} className="mb-16" />
+      ))}
+    </>
   )
 }

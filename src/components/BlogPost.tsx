@@ -4,6 +4,7 @@ import { PrismicNextImage } from '@prismicio/next'
 import BlogPostInfo from './BlogPostInfo'
 import { CategoryTag } from './CategoryTag'
 import styled from 'styled-components'
+import { IBlogPostPayload } from '../types/BlogPostPayload'
 
 const Title = styled.h3`
   width: 360px;
@@ -25,7 +26,7 @@ const Card = styled.div`
   }
 `
 
-export default function BlogPost({ data }) {
+export default function BlogPost({ data }: IBlogPostPayload) {
   return (
     <Card>
       <PrismicNextImage className="post-image mb-16" field={data.img} />

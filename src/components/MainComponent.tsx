@@ -1,9 +1,11 @@
 'use client'
 
 import styled from 'styled-components'
-import { CategoryTag } from './CategoryTag'
+import { Tags } from './CategoryTag'
 import { MainPostTitleWrapper } from './PageTitleWrapper'
 import BlogPostInfo from './BlogPostInfo'
+import { IBlogPost } from '../types/BlogPost'
+import React from 'react'
 
 export const MainPostWrapper = styled.div`
   display: flex;
@@ -28,13 +30,16 @@ export const MainPostWrapper = styled.div`
     font-weight: 600;
   }
 `
+interface IMainPostComponentProps {
+  data: IBlogPost
+}
 
-export default function MainPostComponent({ data }) {
+export default function MainPostComponent({
+  data,
+}: IMainPostComponentProps): JSX.Element {
   return (
     <MainPostWrapper $bgimage={data.img.url}>
-      {data.category.map((item, index) => (
-        <CategoryTag key={index} item={item} className="mb-16" />
-      ))}
+      <Tags />
       <MainPostTitleWrapper>{data.title}</MainPostTitleWrapper>
       <BlogPostInfo item={data} isMainPost={true} />
     </MainPostWrapper>

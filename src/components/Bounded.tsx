@@ -6,6 +6,7 @@ type BoundedProps = {
   as?: React.ElementType
   className?: string
   children: React.ReactNode
+  marginBottom?: number
 }
 
 const Wrapper = styled.div`

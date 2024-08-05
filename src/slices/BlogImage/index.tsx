@@ -2,7 +2,6 @@ import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
 import Bounded from '../../components/Bounded'
 import { PrismicNextImage } from '@prismicio/next'
-import { createClient } from '../../prismicio'
 
 /**
  * Props for `BlogImage`.

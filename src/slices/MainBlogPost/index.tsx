@@ -14,9 +14,9 @@ export type MainBlogPostProps = SliceComponentProps<Content.MainBlogPostSlice>
 /**
  * Component for "MainBlogPost" Slices.
  */
-const MainBlogPost = async ({
+async function MainBlogPost({
   slice,
-}: MainBlogPostProps): Promise<JSX.Element> => {
+}: MainBlogPostProps): Promise<JSX.Element> {
   const client = createClient()
   const { data } = await client.getByUID('blogpost', slice.primary.post.uid)
 

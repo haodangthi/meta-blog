@@ -19,9 +19,6 @@ const BlogPostsList = async ({
 }: BlogPostsListProps): Promise<JSX.Element> => {
   const client = createClient()
   const posts = await client.getAllByType('blogpost')
-  const page = await client.getSingle('homepage')
-  // const a =  await client.getByUID('blogpost','')
-  // const posts = await page.data.slices.filter(slice => slice.slice_type === 'blog_posts_list')[0].primary.posts //.primary.posts
 
   return (
     <Bounded

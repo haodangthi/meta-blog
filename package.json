@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "slicemachine": "start-slicemachine",
     "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}'",
     "format": "prettier --write 'src/**/*.{js,ts,jsx,tsx,json,css,scss,md}'"

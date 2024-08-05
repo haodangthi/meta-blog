@@ -15,9 +15,8 @@
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "array-bracket-spacing": ["error", "always", { "singleValue": false , "arraysInArrays": false ,"objectsInArrays": false }],
-    "object-curly-spacing": ["error", "always", { "arraysInObjects": false, "objectsInObjects": false  }],
     "no-multi-spaces": ["error", { "ignoreEOLComments": false }]
   },
   "settings": {
