@@ -1,5 +1,3 @@
-import { Content } from '@prismicio/client'
-import { SliceComponentProps } from '@prismicio/react'
 import Bounded from '../../components/Bounded'
 import { createClient } from '../../prismicio'
 import { Button } from '../../components/ui/Button'
@@ -8,15 +6,13 @@ import BlogPosts from '../../components/BlogPostsList'
 /**
  * Props for `BlogPostsList`.
  */
-export type BlogPostsListProps = SliceComponentProps<Content.BlogPostsListSlice>
+//export type BlogPostsListProps = SliceComponentProps<Content.BlogPostsListSlice>
 
 /**
  * Component for "BlogPostsList" Slices.
  */
 
-const BlogPostsList = async ({
-  slice,
-}: BlogPostsListProps): Promise<JSX.Element> => {
+const BlogPostsList = async ({ slice }: any): Promise<JSX.Element> => {
   const client = createClient()
   const posts = await client.getAllByType('blogpost')
 

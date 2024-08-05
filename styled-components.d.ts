@@ -13,3 +13,4 @@ declare module 'styled-components' {
         switcher: string;
     }
 }
+

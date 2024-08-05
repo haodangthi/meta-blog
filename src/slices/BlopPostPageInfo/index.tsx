@@ -1,5 +1,3 @@
-import { Content } from '@prismicio/client'
-import { SliceComponentProps } from '@prismicio/react'
 import Bounded from '../../components/Bounded'
 import { createClient } from '../../prismicio'
 import { Tags } from '../../components/CategoryTag'
@@ -9,15 +7,12 @@ import BlogPostInfo from '../../components/BlogPostInfo'
 /**
  * Props for `BlopPostPageInfo`.
  */
-export type BlopPostPageInfoProps =
-  SliceComponentProps<Content.BlopPostPageInfoSlice>
+//export type BlopPostPageInfoProps = SliceComponentProps<Content.BlopPostPageInfoSlice>
 
 /**
  * Component for "BlopPostPageInfo" Slices.
  */
-const BlopPostPageInfo = async ({
-  slice,
-}: BlopPostPageInfoProps): Promise<JSX.Element> => {
+const BlopPostPageInfo = async ({ slice }: any): Promise<JSX.Element> => {
   const client = createClient()
   const postId = slice.primary.blog_post_page_info.uid
   const { data } = await client.getByUID('blogpost', postId)

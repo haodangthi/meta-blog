@@ -1,7 +1,5 @@
 'use client'
 
-import { Content } from '@prismicio/client'
-import { SliceComponentProps } from '@prismicio/react'
 import Bounded from '../../components/Bounded'
 import { createClient } from '../../prismicio'
 import MainPostComponent from '../../components/MainComponent'
@@ -9,14 +7,12 @@ import MainPostComponent from '../../components/MainComponent'
 /**
  * Props for `MainBlogPost`.
  */
-export type MainBlogPostProps = SliceComponentProps<Content.MainBlogPostSlice>
+//export type MainBlogPostProps = SliceComponentProps<Content.MainBlogPostSlice>
 
 /**
  * Component for "MainBlogPost" Slices.
  */
-async function MainBlogPost({
-  slice,
-}: MainBlogPostProps): Promise<JSX.Element> {
+async function MainBlogPost({ slice }: any): Promise<JSX.Element> {
   const client = createClient()
   const { data } = await client.getByUID('blogpost', slice.primary.post.uid)
 

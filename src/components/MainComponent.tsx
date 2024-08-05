@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { Tags } from './CategoryTag'
 import { MainPostTitleWrapper } from './PageTitleWrapper'
 import BlogPostInfo from './BlogPostInfo'
-import { IBlogPost } from '../types/BlogPost'
 import React from 'react'
 
 type MainPostWrapperProps = {
@@ -34,13 +33,11 @@ export const MainPostWrapper = styled.div<MainPostWrapperProps>`
     font-weight: 600;
   }
 `
-interface IMainPostComponentProps {
-  data: IBlogPost
-}
+// interface IMainPostComponentProps {
+//   data: IBlogPost
+// }
 
-export default function MainPostComponent({
-  data,
-}: IMainPostComponentProps): JSX.Element {
+export default function MainPostComponent({ data }: any): JSX.Element {
   return (
     <MainPostWrapper $bgimage={data.img.url}>
       <Tags data={data} />

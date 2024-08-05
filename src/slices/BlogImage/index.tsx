@@ -1,17 +1,15 @@
-import { Content } from '@prismicio/client'
-import { SliceComponentProps } from '@prismicio/react'
 import Bounded from '../../components/Bounded'
 import { PrismicNextImage } from '@prismicio/next'
 
 /**
  * Props for `BlogImage`.
  */
-export type BlogImageProps = SliceComponentProps<Content.BlogImageSlice>
+// export type BlogImageProps = SliceComponentProps<Content.BlogImageSlice>
 
 /**
  * Component for "BlogImage" Slices.
  */
-const BlogImage = ({ slice }: BlogImageProps): JSX.Element => {
+const BlogImage = ({ slice }: any): JSX.Element => {
   return (
     <Bounded
       data-slice-type={slice.slice_type}

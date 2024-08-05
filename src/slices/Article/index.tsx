@@ -1,18 +1,17 @@
-import { Content } from '@prismicio/client'
-import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
-import Bounded from '../../components/Bounded'
+import { PrismicRichText } from '@prismicio/react'
 import { Wrapper } from './components/Wrapper'
+import Bounded from '../../components/Bounded'
 
 /**
  * Props for `Article`.
  */
-export type ArticleProps = SliceComponentProps<Content.ArticleSlice>
+// export type ArticleProps = SliceComponentProps<Content.ArticleSlice>
 
 /**
  * Component for "Article" Slices.
  */
 
-const Article = ({ slice }: ArticleProps): JSX.Element => {
+const Article = ({ slice }: any): JSX.Element => {
   return (
     <Bounded
       data-slice-type={slice.slice_type}
