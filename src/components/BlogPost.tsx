@@ -2,7 +2,7 @@
 
 import { PrismicNextImage } from '@prismicio/next'
 import BlogPostInfo from './BlogPostInfo'
-import { CategoryTag } from './CategoryTag'
+import { Tags } from './CategoryTag'
 import styled from 'styled-components'
 import { IBlogPostPayload } from '../types/BlogPostPayload'
 
@@ -30,9 +30,7 @@ export default function BlogPost({ data }: IBlogPostPayload) {
   return (
     <Card>
       <PrismicNextImage className="post-image mb-16" field={data.img} />
-      {data.category.map((item, index) => (
-        <CategoryTag key={index} item={item} className="mb-16" />
-      ))}
+      <Tags data={data}></Tags>
       <Title className="mb-16">{data.title}</Title>
       <BlogPostInfo item={data}></BlogPostInfo>
     </Card>

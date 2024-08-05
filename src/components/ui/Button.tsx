@@ -11,3 +11,19 @@ export const Button = styled.button`
   font-size: 16px;
   font-weight: 500;
 `
+
+export const ButtonSecondary = styled.button`
+  width: 100%;
+  padding: 12px;
+  background-color: #4b6bfb;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #2a68cc;
+  }
+`

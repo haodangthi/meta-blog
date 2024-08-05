@@ -2,7 +2,7 @@
 
 import { PrismicNextImage } from '@prismicio/next'
 import styled from 'styled-components'
-import { IBlogPostPayload } from '../types/BlogPost'
+import { IBlogPostPayload } from '../types/BlogPostPayload'
 
 const Author = styled.span`
   margin-right: 20px;
@@ -20,7 +20,7 @@ const Date = styled.span`
 `
 
 export default function BlogPostInfo({ item }: IBlogPostPayload) {
-  const color = '#fff'
+  const color = '#000'
 
   return (
     <div className="align-center">

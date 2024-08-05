@@ -11,6 +11,15 @@ const GlobalStyle = createGlobalStyle`
   
   footer {
       background-color: ${(props) => props.theme.backgroundFooter};
+      color: ${(props) => props.theme.color};
+      
+      h3, p {
+        color: #696A75;
+      }
+  }
+  
+  .nav li a {
+     color: ${(props) => props.theme.color};
   }
 `
 

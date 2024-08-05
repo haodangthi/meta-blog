@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import ThemeIcon from '../Icons/ThemeIcon'
+import ThemeIcon from '../icons/ThemeIcon'
 import { useTheme } from '../../context/ThemeContext'
 
 const SwitcherContainer = styled.div`

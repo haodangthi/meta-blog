@@ -1,5 +1,5 @@
 'use client'
-import SearchIcon from '../Icons/SearchIcon'
+import SearchIcon from '../icons/SearchIcon'
 import { Inter } from 'next/font/google'
 import styled from 'styled-components'
 

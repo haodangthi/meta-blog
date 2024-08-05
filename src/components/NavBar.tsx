@@ -5,7 +5,6 @@ import { PrismicNextLink } from '@prismicio/next'
 import { styled } from 'styled-components'
 
 const NavItem = styled.li`
-  color: #3b3c4a;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -14,6 +13,7 @@ const NavItem = styled.li`
   cursor: pointer;
 
   a {
+    color: #3b3c4a;
     text-decoration: none;
   }
 `

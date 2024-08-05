@@ -39,7 +39,7 @@ export default function MainPostComponent({
 }: IMainPostComponentProps): JSX.Element {
   return (
     <MainPostWrapper $bgimage={data.img.url}>
-      <Tags />
+      <Tags data={data} />
       <MainPostTitleWrapper>{data.title}</MainPostTitleWrapper>
       <BlogPostInfo item={data} isMainPost={true} />
     </MainPostWrapper>
