@@ -3,6 +3,7 @@
 import { createClient } from '../prismicio'
 import { PrismicNextLink } from '@prismicio/next'
 import { styled } from 'styled-components'
+import { INavItem } from '../types/Navigation'
 
 const NavItem = styled.li`
   font-size: 16px;
@@ -13,7 +14,7 @@ const NavItem = styled.li`
   cursor: pointer;
 
   a {
-    color: #3b3c4a;
+    color: ${({ theme }) => theme.titleColor};
     text-decoration: none;
   }
 `
@@ -25,7 +26,7 @@ export async function NavBar() {
   return (
     <nav>
       <ul className="nav">
-        {headerData.data.nav_item.map((item, index) => (
+        {headerData.data.nav_item.map((item: INavItem, index: number) => (
           <NavItem key={index}>
             <PrismicNextLink field={item.link}>{item.label}</PrismicNextLink>
           </NavItem>

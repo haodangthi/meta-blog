@@ -2,7 +2,7 @@ import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
 import Bounded from '../../components/Bounded'
 import { createClient } from '../../prismicio'
-import { CategoryTag } from '../../components/CategoryTag'
+import { Tags } from '../../components/CategoryTag'
 import { MainPostTitleWrapper } from '../../components/PageTitleWrapper'
 import BlogPostInfo from '../../components/BlogPostInfo'
 
@@ -29,13 +29,11 @@ const BlopPostPageInfo = async ({
       marginBottom={32}
     >
       <div style={{ maxWidth: '800px' }}>
-        {data.category.map((item, index) => (
-          <CategoryTag key={index} item={item} className="mb-16" />
-        ))}
+        <Tags data={data} />
         <MainPostTitleWrapper color={'black'}>
           {data.title}
         </MainPostTitleWrapper>
-        <BlogPostInfo item={data} isMainPost={false} />
+        <BlogPostInfo data={data} />
       </div>
     </Bounded>
   )

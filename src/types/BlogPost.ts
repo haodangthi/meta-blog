@@ -38,6 +38,15 @@ export interface ICategory {
   bg_color: string
 }
 
+export interface IPosts {
+  posts: IPost[]
+}
+
+export interface IPost {
+  uid: string
+  data: IBlogPost
+}
+
 export interface IBlogPost {
   img: Image
   avatar: IAvatar

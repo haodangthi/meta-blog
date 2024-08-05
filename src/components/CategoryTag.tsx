@@ -14,6 +14,7 @@ const Tag = styled.div`
 
 interface ICategoryTagProps {
   item: ICategory
+  className?: string
 }
 
 export function CategoryTag({ item }: ICategoryTagProps) {
@@ -28,7 +29,7 @@ export function Tags({ data }: IBlogPostPayload) {
   return (
     <>
       {data.category.map((item, index) => (
-        <CategoryTag key={index} item={item} className="mb-16" />
+        <CategoryTag item={item} key={index} className="mb-16" />
       ))}
     </>
   )

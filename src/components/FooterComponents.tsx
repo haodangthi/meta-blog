@@ -13,7 +13,12 @@ export const FooterContent = styled.div`
   text-align: left;
 `
 
-export const Column = styled.div`
+type ColumnProps = {
+  mr?: number
+  $maxWidth?: number
+}
+
+export const Column = styled.div<ColumnProps>`
   margin-right: ${(props) => props.mr}px;
   max-width: ${(props) => props.$maxWidth}px;
 `
@@ -21,7 +26,7 @@ export const Column = styled.div`
 export const ColumnTitle = styled.h3`
   margin-bottom: 20px;
   font-size: 18px;
-  color: #181a2a;
+  color: ${({ theme }) => theme.titleColor};
 `
 
 export const LinkList = styled.ul`
@@ -31,23 +36,18 @@ export const LinkList = styled.ul`
 
 export const LinkItem = styled.li`
   margin-bottom: 10px;
-  color: #666;
+  color: ${({ theme }) => theme.footerLinkColor};
   cursor: pointer;
-
-  &:hover {
-    color: #000;
-  }
 `
 
 export const AboutText = styled.p`
-  color: #666;
+  color: ${({ theme }) => theme.textColor};
   margin: 10px 0;
 `
 
 export const Address = styled.address`
   display: flex;
   font-style: normal;
-  color: #666;
 `
 
 export const ColumnTextWrapper = styled.div`
@@ -56,7 +56,7 @@ export const ColumnTextWrapper = styled.div`
 `
 
 export const ContactDetail = styled.span`
-  color: #181a2a;
+  color: ${({ theme }) => theme.titleColor};
   font-size: 16px;
   font-style: normal;
 
@@ -66,21 +66,21 @@ export const ContactDetail = styled.span`
 `
 
 export const NewsletterSection = styled.div`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.newsLetter};
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 `
 
 export const NewsletterTitle = styled.h4`
-  color: ${(props) => props.theme.color};
+  color: ${(props) => props.theme.titleColor};
   margin: 30px 0 15px;
 `
 
 export const InputWrapper = styled.div`
   display: flex;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: ${({ theme }) => theme.newsLetter};
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -100,20 +100,4 @@ export const CopyrightSection = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
-
-  a {
-    color: #3b3c4a;
-    margin: 0 10px;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &:not(:last-child) {
-      border-right: 1px solid #e8e8ea;
-      padding-right: 10px;
-    }
-  }
 `

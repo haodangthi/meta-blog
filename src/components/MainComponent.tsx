@@ -7,7 +7,11 @@ import BlogPostInfo from './BlogPostInfo'
 import { IBlogPost } from '../types/BlogPost'
 import React from 'react'
 
-export const MainPostWrapper = styled.div`
+type MainPostWrapperProps = {
+  $bgimage: string
+}
+
+export const MainPostWrapper = styled.div<MainPostWrapperProps>`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -41,7 +45,7 @@ export default function MainPostComponent({
     <MainPostWrapper $bgimage={data.img.url}>
       <Tags data={data} />
       <MainPostTitleWrapper>{data.title}</MainPostTitleWrapper>
-      <BlogPostInfo item={data} isMainPost={true} />
+      <BlogPostInfo data={data} />
     </MainPostWrapper>
   )
 }

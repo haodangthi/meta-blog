@@ -2,6 +2,7 @@
 
 import React, { createContext, useState, useContext, ReactNode } from 'react'
 import { ThemeProvider as StyledThemeProvider } from 'styled-components'
+import { darkTheme, lightTheme } from '../styles/theme'
 
 interface ThemeContextProps {
   theme: string
@@ -9,18 +10,6 @@ interface ThemeContextProps {
 }
 
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined)
-
-const lightTheme = {
-  background: '#ffffff',
-  color: '#000000',
-  backgroundFooter: '#E8E8EA',
-}
-
-const darkTheme = {
-  background: '#000000',
-  color: '#ffffff',
-  backgroundFooter: '#141624',
-}
 
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState('light')

@@ -8,4 +8,5 @@ export const Wrapper = styled.div`
   flex-direction: column;
   gap: 16px;
   margin: 32px auto;
+  color: ${({ theme }) => theme.textColor};
 `

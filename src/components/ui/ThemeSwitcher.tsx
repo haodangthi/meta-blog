@@ -11,7 +11,7 @@ const SwitcherContainer = styled.div`
   justify-content: center;
   width: 48px;
   height: 28px;
-  background-color: ${({ theme }) => (theme === 'light' ? '#ddd' : '#4B6BFB')};
+  background-color: ${({ theme }) => theme.switcherColor};
   border-radius: 50px;
   padding: 3px;
   cursor: pointer;
@@ -27,7 +27,7 @@ const SwitchCircle = styled.div`
   background-color: #fff;
   border-radius: 50%;
   position: relative;
-  left: ${({ theme }) => (theme === 'light' ? '-9px' : '10px')};
+  left: ${({ theme }) => theme.switcher};
   transition:
     left 0.3s,
     background-color 0.3s;
@@ -37,11 +37,11 @@ const SwitchCircle = styled.div`
 `
 
 const ThemeSwitcher = () => {
-  const { theme, toggleTheme } = useTheme()
+  const { toggleTheme } = useTheme()
 
   return (
-    <SwitcherContainer theme={theme} onClick={toggleTheme}>
-      <SwitchCircle theme={theme}>
+    <SwitcherContainer onClick={toggleTheme}>
+      <SwitchCircle>
         <ThemeIcon />
       </SwitchCircle>
     </SwitcherContainer>

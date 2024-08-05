@@ -39,10 +39,10 @@ const StyledSearchInput = styled.div`
   }
 `
 
-const SearchBar = (props) => {
+const SearchBar = () => {
   return (
     <StyledSearchInput className={inter.className}>
-      <input type="text" placeholder="Search" {...props} />
+      <input type="text" placeholder="Search" />
       <SearchIcon />
     </StyledSearchInput>
   )

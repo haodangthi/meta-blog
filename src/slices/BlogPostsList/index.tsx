@@ -26,7 +26,7 @@ const BlogPostsList = async ({
       data-slice-variation={slice.variation}
       marginBottom={80}
     >
-      <BlogPosts data={posts} />
+      <BlogPosts posts={posts} />
       <div className="justify-center">
         <Button>Load More</Button>
       </div>

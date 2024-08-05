@@ -9,24 +9,24 @@ const Author = styled.span`
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  color: ${(props) => props.color};
+  color: ${({ theme }) => theme.smallTextColor};
 `
 
 const Date = styled.span`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  color: ${(props) => props.color};
+  color: ${({ theme }) => theme.smallTextColor};
 `
 
-export default function BlogPostInfo({ item }: IBlogPostPayload) {
+export default function BlogPostInfo({ data }: IBlogPostPayload) {
   const color = '#000'
 
   return (
     <div className="align-center">
-      <PrismicNextImage className="profile-img" field={item.avatar} />
-      <Author color={color}>{item.author}</Author>
-      <Date color={color}>{item.date}</Date>
+      <PrismicNextImage className="profile-img" field={data.avatar} />
+      <Author color={color}>{data.author}</Author>
+      <Date color={color}>{data.date}</Date>
     </div>
   )
 }

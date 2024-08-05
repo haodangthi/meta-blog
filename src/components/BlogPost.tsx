@@ -11,6 +11,7 @@ const Title = styled.h3`
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
+  color: ${({ theme }) => theme.titleColor};
 `
 
 const Card = styled.div`
@@ -32,7 +33,7 @@ export default function BlogPost({ data }: IBlogPostPayload) {
       <PrismicNextImage className="post-image mb-16" field={data.img} />
       <Tags data={data}></Tags>
       <Title className="mb-16">{data.title}</Title>
-      <BlogPostInfo item={data}></BlogPostInfo>
+      <BlogPostInfo data={data}></BlogPostInfo>
     </Card>
   )
 }

@@ -9,8 +9,8 @@ export const PageTitleWrapper = styled.h1`
   font-weight: 600;
 `
 
-export const MainPostTitleWrapper = styled.h1`
-  color: ${(props) => props.textColor};
+export const MainPostTitleWrapper = styled.h1<{ textColor?: string }>`
+  color: ${({ theme }) => theme.titleColor};
   font-size: 36px;
   font-style: normal;
   font-weight: 600;

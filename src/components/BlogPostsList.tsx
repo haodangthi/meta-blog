@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 import BlogPost from './BlogPost'
-import { IBlogPost } from '../types/BlogPost'
+import { IPosts } from '../types/BlogPost'
 
 const BlogPostsListWrapper = styled.div`
   max-width: 1222px;
@@ -12,7 +12,7 @@ const BlogPostsListWrapper = styled.div`
   margin: 0 0 32px;
 `
 
-export default function BlogPosts({ posts }: { posts: IBlogPost[] }) {
+export default function BlogPosts({ posts }: IPosts) {
   return (
     <BlogPostsListWrapper>
       {posts.map((post) => {
