@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { ThemeProvider } from '../context/ThemeContext'
 import GlobalStyle from '../styles/global'
+import StyledComponentsRegistry from './registry'
 
 const workSans = Work_Sans({ subsets: ['latin'] })
 
@@ -23,9 +24,11 @@ export default function RootLayout({
       <html lang="en">
         <GlobalStyle />
         <body className={workSans.className}>
-          <Header />
-          {children}
-          <Footer />
+          <StyledComponentsRegistry>
+            <Header />
+            {children}
+            <Footer />
+          </StyledComponentsRegistry>
         </body>
       </html>
     </ThemeProvider>
