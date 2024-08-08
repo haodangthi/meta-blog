@@ -5,6 +5,8 @@ import { PrismicNextImage } from '@prismicio/next'
 import { MainPostWrapper } from './MainPostWrapper'
 
 export default function MainPostComponent({ data }: any): JSX.Element {
+  const smallTextColor = '#fff'
+
   return (
     <div className="image-wrapper">
       <PrismicNextImage
@@ -17,7 +19,7 @@ export default function MainPostComponent({ data }: any): JSX.Element {
       <MainPostWrapper>
         <Tags data={data} />
         <MainPostTitleWrapper>{data.title}</MainPostTitleWrapper>
-        <BlogPostInfo data={data} />
+        <BlogPostInfo data={data} color={smallTextColor} />
       </MainPostWrapper>
     </div>
   )

@@ -8,19 +8,17 @@ const Author = styled.span`
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  color: ${({ theme }) => theme.smallTextColor};
+  color: ${({ theme, color }) => color || theme.smallTextColor};
 `
 
 const Date = styled.span`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  color: ${({ theme }) => theme.smallTextColor};
+  color: ${({ theme, color }) => color || theme.smallTextColor};
 `
 
-export default function BlogPostInfo({ data }: any) {
-  const color = '#000'
-
+export default function BlogPostInfo({ data, color }: any) {
   return (
     <div className="align-center">
       <PrismicNextImage className="profile-img" field={data.avatar} />

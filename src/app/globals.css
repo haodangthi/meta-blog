@@ -58,3 +58,13 @@ a {
   border-radius: 12px;
   z-index: -1;
 }
+
+.main-post-wrapper {
+  width: 1216px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 40px auto;
+  padding: 40px;
+}

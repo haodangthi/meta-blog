@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 
-export const PageTitleWrapper = styled.h1`
+export const PageTitleWrapper = styled.h2`
   color: ${({ theme }) => theme.titleColor};
   font-size: 30px;
   font-style: normal;
@@ -15,6 +15,7 @@ export const MainPostTitleWrapper = styled.h1<{ textColor?: string }>`
   font-style: normal;
   font-weight: 600;
   margin-bottom: 20px;
+  width: 720px;
 `
 
 export const BlogPostTitleWrapper = styled.h1<{ textColor?: string }>`
