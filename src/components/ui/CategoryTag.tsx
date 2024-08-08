@@ -7,12 +7,17 @@ const Tag = styled.div`
   padding: 4px 10px;
   color: ${(props) => props.color};
   border-radius: 6px;
-  background-color: rgba(75, 107, 251, 0.05);
+  background-color: ${(props) => props.background};
+`
+
+const TagList = styled.div`
+  display: flex;
+  gap: 10px;
 `
 
 export function CategoryTag({ item }: any) {
   return (
-    <Tag className="mb-16" color={item.text_color}>
+    <Tag className="mb-16" color={item.text_color} background={item.bg_color}>
       {item.name}
     </Tag>
   )
@@ -20,10 +25,10 @@ export function CategoryTag({ item }: any) {
 
 export function Tags({ data }: any) {
   return (
-    <>
+    <TagList>
       {data.category.map((item: any, index: number) => (
         <CategoryTag item={item} key={index} className="mb-16" />
       ))}
-    </>
+    </TagList>
   )
 }

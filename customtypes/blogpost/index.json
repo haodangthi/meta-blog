@@ -86,6 +86,15 @@
           "select": "document",
           "customtypes": ["blog_post_page"]
         }
+      },
+      "link_to_post": {
+        "type": "Link",
+        "config": {
+          "label": "link to post",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
       }
     }
   }

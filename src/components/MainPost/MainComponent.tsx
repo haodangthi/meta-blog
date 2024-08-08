@@ -1,7 +1,7 @@
 import { Tags } from '../ui/CategoryTag'
 import { MainPostTitleWrapper } from '../PageTitleWrapper'
 import BlogPostInfo from '../BlogPostInfo'
-import { PrismicNextImage } from '@prismicio/next'
+import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
 import { MainPostWrapper } from './MainPostWrapper'
 import { ImageWrapper } from './ImageWrapper'
 
@@ -19,7 +19,9 @@ export default function MainPostComponent({ data }: any): JSX.Element {
       />
       <MainPostWrapper>
         <Tags data={data} />
-        <MainPostTitleWrapper>{data.title}</MainPostTitleWrapper>
+        <PrismicNextLink field={data.link_to_post}>
+          <MainPostTitleWrapper>{data.title}</MainPostTitleWrapper>
+        </PrismicNextLink>
         <BlogPostInfo data={data} color={smallTextColor} />
       </MainPostWrapper>
     </ImageWrapper>

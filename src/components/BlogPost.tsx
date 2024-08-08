@@ -1,6 +1,6 @@
 'use client'
 
-import { PrismicNextImage } from '@prismicio/next'
+import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
 import BlogPostInfo from './BlogPostInfo'
 import { Tags } from './ui/CategoryTag'
 import styled from 'styled-components'
@@ -31,7 +31,9 @@ export default function BlogPost({ data }: any) {
     <Card>
       <PrismicNextImage className="post-image mb-16" field={data.img} />
       <Tags data={data}></Tags>
-      <Title className="mb-16">{data.title}</Title>
+      <PrismicNextLink field={data.link_to_post}>
+        <Title className="mb-16">{data.title}</Title>
+      </PrismicNextLink>
       <BlogPostInfo data={data}></BlogPostInfo>
     </Card>
   )
