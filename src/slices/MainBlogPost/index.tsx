@@ -1,5 +1,3 @@
-'use client'
-
 import Bounded from '../../components/Bounded'
 import { createClient } from '../../prismicio'
 import MainPostComponent from '../../components/MainPost/MainComponent'

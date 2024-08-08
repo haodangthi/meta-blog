@@ -15,7 +15,7 @@ const BlogPostsList = async ({ slice }: any): Promise<JSX.Element> => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      marginBottom={80}
+      mb={80}
     >
       <BlogPosts posts={posts} />
       <div className="justify-center">

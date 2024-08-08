@@ -16,7 +16,7 @@ const BlopPostPageInfo = async ({ slice }: any): Promise<JSX.Element> => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      marginBottom={32}
+      mb={32}
     >
       <div style={{ maxWidth: '800px' }}>
         <Tags data={data} />

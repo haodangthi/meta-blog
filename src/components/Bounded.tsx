@@ -6,29 +6,29 @@ type BoundedProps = {
   as?: React.ElementType
   className?: string
   children: React.ReactNode
-  marginBottom?: number
+  mb?: number
 }
 
 type WrapperProps = {
-  marginBottom?: number
+  mb?: number
 }
 
 const Wrapper = styled.div<WrapperProps>`
   max-width: fit-content;
   margin: 0 auto;
-  margin-bottom: ${(props) => props.marginBottom || 0}px;
+  margin-bottom: ${(props) => props.mb || 0}px;
 `
 
 export default function Bounded({
   as: Comp = 'section',
   className,
   children,
-  marginBottom,
+  mb,
   ...restProps
 }: BoundedProps) {
   return (
     <Comp className={className} {...restProps}>
-      <Wrapper marginBottom={marginBottom}>{children}</Wrapper>
+      <Wrapper mb={mb}>{children}</Wrapper>
     </Comp>
   )
 }
