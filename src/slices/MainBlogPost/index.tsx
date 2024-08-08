@@ -2,7 +2,7 @@
 
 import Bounded from '../../components/Bounded'
 import { createClient } from '../../prismicio'
-import MainPostComponent from '../../components/MainComponent'
+import MainPostComponent from '../../components/MainPost/MainComponent'
 
 /**
  * Component for "MainBlogPost" Slices.
