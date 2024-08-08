@@ -4,11 +4,6 @@ import { Button } from '../../components/ui/Button'
 import BlogPosts from '../../components/BlogPostsList'
 
 /**
- * Props for `BlogPostsList`.
- */
-//export type BlogPostsListProps = SliceComponentProps<Content.BlogPostsListSlice>
-
-/**
  * Component for "BlogPostsList" Slices.
  */
 

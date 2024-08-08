@@ -10,11 +10,6 @@ const Tag = styled.div`
   background-color: rgba(75, 107, 251, 0.05);
 `
 
-// interface ICategoryTagProps {
-//   item: ICategory
-//   className?: string
-// }
-
 export function CategoryTag({ item }: any) {
   return (
     <Tag className="mb-16" color={item.text_color}>

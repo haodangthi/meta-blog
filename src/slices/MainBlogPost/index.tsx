@@ -5,11 +5,6 @@ import { createClient } from '../../prismicio'
 import MainPostComponent from '../../components/MainComponent'
 
 /**
- * Props for `MainBlogPost`.
- */
-//export type MainBlogPostProps = SliceComponentProps<Content.MainBlogPostSlice>
-
-/**
  * Component for "MainBlogPost" Slices.
  */
 async function MainBlogPost({ slice }: any): Promise<JSX.Element> {

@@ -2,11 +2,6 @@ import Bounded from '../../components/Bounded'
 import { PageTitleWrapper } from '../../components/PageTitleWrapper'
 
 /**
- * Props for `PageTitle`.
- */
-// export type PageTitleProps = SliceComponentProps<Content.PageTitleSlice>
-
-/**
  * Component for "PageTitle" Slices.
  */
 const PageTitle = ({ slice }: any): JSX.Element => {

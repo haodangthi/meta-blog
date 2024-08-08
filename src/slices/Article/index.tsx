@@ -3,11 +3,6 @@ import { Wrapper } from './components/Wrapper'
 import Bounded from '../../components/Bounded'
 
 /**
- * Props for `Article`.
- */
-// export type ArticleProps = SliceComponentProps<Content.ArticleSlice>
-
-/**
  * Component for "Article" Slices.
  */
 

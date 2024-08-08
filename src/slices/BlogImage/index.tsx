@@ -2,11 +2,6 @@ import Bounded from '../../components/Bounded'
 import { PrismicNextImage } from '@prismicio/next'
 
 /**
- * Props for `BlogImage`.
- */
-// export type BlogImageProps = SliceComponentProps<Content.BlogImageSlice>
-
-/**
  * Component for "BlogImage" Slices.
  */
 const BlogImage = ({ slice }: any): JSX.Element => {
