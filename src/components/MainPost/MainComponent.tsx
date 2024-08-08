@@ -1,10 +1,9 @@
-
 import { Tags } from '../ui/CategoryTag'
 import { MainPostTitleWrapper } from '../PageTitleWrapper'
 import BlogPostInfo from '../BlogPostInfo'
 import { PrismicNextImage } from '@prismicio/next'
-import {ImageWrapper} from "./ImageWrapper";
-import {MainPostWrapper} from "./MainPostWrapper";
+import { ImageWrapper } from './ImageWrapper'
+import { MainPostWrapper } from './MainPostWrapper'
 
 export default function MainPostComponent({ data }: any): JSX.Element {
   return (
