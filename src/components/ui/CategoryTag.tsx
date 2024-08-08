@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 
-const Tag = styled.div`
+const Tag = styled.div<{ background: string }>`
   width: fit-content;
   padding: 4px 10px;
   color: ${(props) => props.color};
