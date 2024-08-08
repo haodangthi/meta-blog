@@ -78,6 +78,14 @@
           "label": "title",
           "placeholder": ""
         }
+      },
+      "link_to_blogpost": {
+        "type": "Link",
+        "config": {
+          "label": "link_to_blogpost",
+          "select": "document",
+          "customtypes": ["blog_post_page"]
+        }
       }
     }
   }

@@ -1,30 +1,20 @@
 'use client'
 
 import styled from 'styled-components'
-import { Tags } from './CategoryTag'
+import { Tags } from './ui/CategoryTag'
 import { MainPostTitleWrapper } from './PageTitleWrapper'
 import BlogPostInfo from './BlogPostInfo'
 import React from 'react'
+import { PrismicNextImage } from '@prismicio/next'
 
-type MainPostWrapperProps = {
-  $bgimage: string
-}
-
-export const MainPostWrapper = styled.div<MainPostWrapperProps>`
+export const MainPostWrapper = styled.div`
+  width: 1216px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 1216px;
-  height: 450px;
   margin: 40px auto;
-  border-radius: 12px;
   padding: 40px;
-  background:
-    linear-gradient(0deg, rgba(20, 22, 36, 0.4) 0%, rgba(20, 22, 36, 0.4) 100%),
-    url(${(props) => props.$bgimage}) lightgray 50% / cover no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: #fff;
 
   h3 {
     width: 720px;
@@ -33,16 +23,38 @@ export const MainPostWrapper = styled.div<MainPostWrapperProps>`
     font-weight: 600;
   }
 `
-// interface IMainPostComponentProps {
-//   data: IBlogPost
-// }
+
+export const ImageWrapper = styled.div`
+  position: relative;
+  border-radius: 12px;
+  background: linear-gradient(
+    0deg,
+    rgba(20, 22, 36, 0.4) 0%,
+    rgba(20, 22, 36, 0.4) 100%
+  );
+
+  > img {
+    position: absolute;
+    border-radius: 12px;
+    z-index: -1;
+  }
+`
 
 export default function MainPostComponent({ data }: any): JSX.Element {
   return (
-    <MainPostWrapper $bgimage={data.img.url}>
-      <Tags data={data} />
-      <MainPostTitleWrapper>{data.title}</MainPostTitleWrapper>
-      <BlogPostInfo data={data} />
-    </MainPostWrapper>
+    <ImageWrapper>
+      <PrismicNextImage
+        field={data.img}
+        width={1216}
+        height={450}
+        alt=""
+        fallback={<div>A picture of the main post</div>}
+      />
+      <MainPostWrapper>
+        <Tags data={data} />
+        <MainPostTitleWrapper>{data.title}</MainPostTitleWrapper>
+        <BlogPostInfo data={data} />
+      </MainPostWrapper>
+    </ImageWrapper>
   )
 }

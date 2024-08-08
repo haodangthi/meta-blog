@@ -2,7 +2,7 @@
 
 import { PrismicNextImage } from '@prismicio/next'
 import BlogPostInfo from './BlogPostInfo'
-import { Tags } from './CategoryTag'
+import { Tags } from './ui/CategoryTag'
 import styled from 'styled-components'
 
 const Title = styled.h3`

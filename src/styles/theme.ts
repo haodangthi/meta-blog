@@ -18,6 +18,7 @@ export const theme = {
 export const lightTheme = {
   background: theme.colors.white,
   titleColor: theme.colors.secondary800,
+  mainPostTitleColor: theme.colors.white,
   textColor: theme.colors.secondary800,
   footerLinkColor: theme.colors.secondary600,
   footerText: theme.colors.secondary500,
@@ -32,6 +33,7 @@ export const lightTheme = {
 export const darkTheme = {
   background: theme.colors.secondary800,
   titleColor: theme.colors.white,
+  mainPostTitleColor: theme.colors.white,
   textColor: theme.colors.secondary300,
   footerLinkColor: theme.colors.secondary300,
   footerText: theme.colors.secondary400,

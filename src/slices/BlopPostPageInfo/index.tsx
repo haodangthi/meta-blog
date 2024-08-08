@@ -1,13 +1,8 @@
 import Bounded from '../../components/Bounded'
 import { createClient } from '../../prismicio'
-import { Tags } from '../../components/CategoryTag'
-import { MainPostTitleWrapper } from '../../components/PageTitleWrapper'
+import { Tags } from '../../components/ui/CategoryTag'
+import { BlogPostTitleWrapper } from '../../components/PageTitleWrapper'
 import BlogPostInfo from '../../components/BlogPostInfo'
-
-/**
- * Props for `BlopPostPageInfo`.
- */
-//export type BlopPostPageInfoProps = SliceComponentProps<Content.BlopPostPageInfoSlice>
 
 /**
  * Component for "BlopPostPageInfo" Slices.
@@ -25,9 +20,7 @@ const BlopPostPageInfo = async ({ slice }: any): Promise<JSX.Element> => {
     >
       <div style={{ maxWidth: '800px' }}>
         <Tags data={data} />
-        <MainPostTitleWrapper color={'black'}>
-          {data.title}
-        </MainPostTitleWrapper>
+        <BlogPostTitleWrapper>{data.title}</BlogPostTitleWrapper>
         <BlogPostInfo data={data} />
       </div>
     </Bounded>
